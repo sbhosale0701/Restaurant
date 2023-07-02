@@ -1,0 +1,418 @@
+<?php
+//session_start();
+include('config.php');
+//include('includes/checklogin.php');
+//check_login();
+if(isset($_POST['submit']))
+
+{
+
+ $name=$_POST['name'];
+ $email=$_POST['email'];
+ $contact=$_POST['contact'];
+ $message=$_POST['message'];
+
+
+ $query="INSERT INTO `contact` (`id`, `name`, `email`, `contact`, `message`) VALUES (NULL, '$name', '$email', '$contact', '$message')  ";
+
+$statement=$con->prepare($query);
+	$query=$statement->execute([$name,$email,$contact,$message]);
+
+
+
+if($query)
+{
+	echo "<script>alert('Data are saved successfully');</script>";
+
+}
+else
+{
+	echo "<script>alert('something gose wrong');</script>";
+}
+}
+?>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Shivneri Castle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel = "icon" href = "favicon.png" type = "image/png" sizes = "16x16">
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- google fonts -->
+    <link rel = "stylesheet" href = "css/fonts.css">
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <!-- normalize css -->
+    <link rel = "stylesheet" href = "css/normalize.css">
+    <!-- magnific popup -->
+    <link rel = "stylesheet" href = "css/magnific-popup.css">
+    <!-- slick css -->
+    <link rel = "stylesheet" href = "css/slick.css">
+    <link rel = "stylesheet" href = "css/slick-theme.css">
+    <!-- animate on scroll -->
+    <link rel = "stylesheet" href = "css/aos.css">
+  </head>
+  <body>
+
+    <!-- navbar -->
+   <center> <nav class = "navbar" style="height: 120px;">
+      <div class = "nav-brand-toggler">
+		<img src="logo2.png" width="480" height="120" align="left"></img>
+        <a href = "index.html" class = "navbar-brand"> </a>
+        <button type = "button" class = "navbar-toggler" id = "navbar-toggler">
+          <i class = "fas fa-bars"></i>
+        </button>
+      </div>
+
+      <div class = "navbar-collapse">
+        <ul class = "navbar-nav">
+          <li class = "nav-item">
+            <a href = "#home" class = "nav-link">Home</a>
+          </li>
+          <li class = "nav-item">
+            <a href = "#about" class = "nav-link">About</a>
+          </li>
+          <li class = "nav-item">
+            <a href = "#services" class = "nav-link">Services</a>
+          </li>
+		   <li class = "nav-item">
+            <a href = "#menu" class = "nav-link">Menu</a>
+          </li>
+          <li class = "nav-item">
+            <a href = "#contact" class = "nav-link">Contact</a>
+          </li>
+        </ul>
+
+      </div>
+    </nav></center> 
+    <!-- end of navbar -->
+
+    <!-- header -->
+    <header class = "header" id = "home">
+      <div class = "container">
+		<h2 class = "header-title">Hotel Shivneri Castle</h2>
+        <h5 class = "header-title">Enjoy Our Special Food Quality Every Day</h5>
+      </div>
+    </header>
+    <!-- end of header -->
+    
+    <!-- about -->
+    <section id = "about" class = "about container section-py">
+      <div class = "about-left" data-aos = "fade-right">
+        <!-- title -->
+        <div class = "title">
+          <h4 style="color:#ca861a">read our story</h4>
+          <h2>we've been making delicious food since 2018</h2>
+        </div>
+        <!-- end of title -->
+        <p class = "para-text">
+          Celebrated as one of the city's best is, Hotel Shivneri Castle in Sangli. The hotel is strategically located in Tandulwadi. This hospitality destination has grown to become the ideal place for travelers and those on business to feel at home when in the city. Many have also reviewed the hotel to be among the sought after Hotels in Sangli. The hotel functions from all through the week. Catering to the convenience of its guests, the hotel makes available various payment methods to ease out the payment process .
+
+With the aim of pampering its guests to a thrilling experience, the hotel features a plethora of services . The hotel is also classified as a destination to resort to when in need of Hotels. When looking to satiate one's cravings, the in-house restaurant is where one can choose to either dine-in or order food online at the single click of a button. One can browse through the 7 photographs attached above, to better understand the space through these visual references. Over the years patrons have been constantly rating the hotel based on their experiences which now brings the property to a 3.9 rating value. When in the city, be sure to enjoy a stay here as it is known to be one of the leading Hotels In Tandulwadi.        </p>
+        </div>
+
+      <div class = "about-right" data-aos = "fade-left">
+      <img src = "c7.jpeg" alt = "hotel image">
+      </div>
+    </section>
+	<hr style="color:gray" width="70%">
+    <!-- end of about -->
+
+   
+	  <main class="mt-5">
+        <div class="container">
+
+            <!--Section: Best Features-->
+            <section id="services" class="text-center"">
+
+                <!-- Heading -->
+                <center><h2 class="mb-5 font-weight-bold"><u>Our Services</h2></center></u>
+
+                <!--Grid row-->
+                <div class="row d-flex justify-content-center mb-4" "services-wrapper popup-gallery" data-aos = "fade-up">
+
+                    <!--Grid column-->
+                    <div class="col-md-8">
+
+                        <!-- Description -->
+                        <p class="grey-text"></p>
+
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                   <center> <div class="col-md-3 mb-5">
+                        <i class="fa fa-star fa-4x red-text" style="color:#61bd61"></i>
+                        <h4 class="my-4 font-weight-bold" style="color:#7d7d25">Engagement Ceremony</h4>
+                        <p class="black-text"> </p>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-3 mb-1">
+                        <i class="fa fa-heart fa-4x yellow-text" style="color:#fb4767"></i>
+                        <h4 class="my-4 font-weight-bold" style="color:#9a2929">Wedding</h4>
+                        <p class="black-text"></p>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-3 mb-1">
+                        <i class="fa fa-birthday-cake fa-4x blue-text" style="color:#d6d652"></i>
+                        <h4 class="my-4 font-weight-bold" style="color:#868619">Birthday Parties</h4>
+                        <p class="black-text">  </p>
+                    </div>
+                    <!--Grid column-->
+						 <div class="col-md-3 mb-1">
+                        <i class="fa fa-child fa-4x green-text" style="color:#f15454"></i>
+                        <h4 class="my-4 font-weight-bold" style="color:#8c1e1e">Name Ceremony</h4>
+                        <p class="black-text">  </p>
+                    </div>
+					 <div class="col-md-3 mb-1">
+                        <i class="fa fa-users fa-4x brown-text" style="color:#7979fb"></i>
+                        <h4 class="my-4 font-weight-bold" style="color:#24246d">Conference Hall</h4>
+                        <p class="black-text">We arrange all above ceremonies as per your requirements.  </p>
+						</div></center>
+                <!--Grid row-->
+
+            </section>
+			</hr>
+	 <!-- menu -->
+    <hr style="color:gray" width="70%"> <section id = "menu" class = "menu section-py">
+      <!-- title -->
+    <div class = "title">
+		<h4 style="color:#868619">taste our food</h4>
+        <h2>quality food items</h2>
+      </div>
+      <!-- end of title -->
+      <div class = "menu-wrapper popup-gallery" data-aos = "fade-up">
+        <!-- item -->
+        <div class = "menu-item">
+          <a href =  "b1.jpg" >
+            <img src = "b1.jpg" alt = "food image" height="350">
+            <div class = "menu-overlay">
+              <div class = "menu-overlay-content">
+                <div>
+                  <h2>breakfast</h2>
+                  <h2> Starting Price Rs25</h2>
+                </div>
+                <h5>delicious / healthy / cheap</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- end of item -->
+        <!-- item -->
+        <div class = "menu-item">
+          <a href = "b2.jpg">
+            <img src = "b2.jpg" alt = "food image" height="350">
+            <div class = "menu-overlay">
+              <div class = "menu-overlay-content">
+                <div>
+                  <h2>Soup</h2>
+                  <h2>Starting Price Rs70</h2>
+                </div>
+                <h5>delicious / healthy / cheap</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- end of item -->
+        <!-- item -->
+        <div class = "menu-item">
+          <a href = "b8.png" >
+            <img src = "b8.png" alt = "food image"height="350">
+            <div class = "menu-overlay">
+              <div class = "menu-overlay-content">
+                <div>
+                  <h2>Non Veg</h2>
+                  <h2>Starting Price Rs80</h2>
+                </div>
+                <h5>delicious / healthy / cheap</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- end of item -->
+        <!-- item -->
+        <div class = "menu-item">
+          <a href = "b9.jpg">
+            <img src = "b9.jpg" alt = "food image"height="350">
+            <div class = "menu-overlay">
+              <div class = "menu-overlay-content">
+                <div>
+                  <h2>Veg</h2>
+                  <h2>Starting Price Rs75</h2>
+                </div>
+                <h5>delicious / healthy / cheap</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- end of item -->
+        <!-- item -->
+        <div class = "menu-item">
+          <a href = "b10.jpg" >
+            <img src = "b10.jpg" alt = "food image"height="350">
+            <div class = "menu-overlay">
+              <div class = "menu-overlay-content">
+                <div>
+                  <h2>South Indian</h2>
+                  <h2>Starting Price Rs25</h2>
+                </div>
+                <h5>delicious / healthy / cheap</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- end of item -->
+        <!-- item -->
+        <div class = "menu-item">
+          <a href = "b6.jpeg">
+            <img src = "b6.jpeg" alt = "food image"height="350">
+            <div class = "menu-overlay">
+              <div class = "menu-overlay-content">
+                <div>
+                  <h2>Cold Drinks</h2>
+                  <h2>Starting Price Rs30</h2>
+                </div>
+                <h5>delicious / healthy / cheap</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- end of item -->
+      </div>
+    </section>
+    <!-- end of menu -->
+
+    <!-- testimonial -->
+    <hr style="color:#868619" width="70%"> <section class = "testimonial section-py">
+      <!-- title -->
+      <div class = "title">
+        <h2>What People Say</h2>
+      </div>
+      <!-- end of title -->
+
+      <div class = "testimonial-slider">
+        <!-- item -->
+        <div class = "testimonial-item">
+          <img src = "p1.jpeg" alt = "people image">
+          <p>Delicious Food. Good Service.</p>
+          <h3>Satyajeet Patil</h3>
+        </div>
+        <!-- end of item -->
+        <!-- item -->
+        <div class = "testimonial-item">
+          <img src = "p2.jpeg" alt = "people image">
+          <p>Good Lone For Parties. Best Food. Good Service.</p>
+          <h3>Kiran Patil</h3>
+        </div>
+        <!-- end of item -->
+        <!-- item -->
+        <div class = "testimonial-item">
+          <img src = "p3.jpeg" alt = "people image">
+          <p>Quality Food. Excellent Service.</p>
+          <h3>Sangram Patil</h3>
+        </div>
+        <!-- end of item -->
+      </div>
+    </section>
+    <!-- end of testimonial -->
+    <!-- contact -->
+    <hr style="color:#868619" width="70%"><section id = "contact" class = "contact section-py">
+      <div class = "contact-wrapper container">
+        <div class = "contact-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15268.141042636284!2d74.2907376!3d16.9235528!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x39cf7722920759bf!2sHotel%20Shivneri%20Castle!5e0!3m2!1sen!2sin!4v1628782130590!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>        
+		  </div>
+        <div class = "contact-info">
+          <!-- title -->
+          <div class = "title">
+            <h2>Contact us</h2>
+          </div>
+          <!-- end of title -->
+          <form class = "contact-form">
+            <div class = "form-group">
+              <input type = "text" class = "form-control" placeholder="Full name">
+              <input type = "email" class = "form-control" placeholder="Email address">
+            </div>
+            <input type = "text" class = "form-control" placeholder="Contact No">
+            <textarea rows = "5" class = "form-control" placeholder="Message"></textarea>
+            <input type = "submit" class = "btn contact-btn" value = "Send Message">
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- end of contact -->
+
+    <!-- footer -->
+    <footer class = "footer section-py">
+      <div class = "footer-wrapper container">
+        <div class = "footer-item">
+          <h3>Find us</h3>
+          <p class = "para-text">Bahadurwadi Road, Near Mauli Bazar Tandulwadi<br>Walwa, Sangli <br>Maharashtra, India</p>
+        </div>
+
+        <div class = "footer-item">
+          <h3>Reservation</h3>
+          <p class = "para-text"> +91 9765977070</p>
+          <p class = "para-text">ranjitp5252@gmail.com</p>
+          <p class = "para-text">LINE: ranjitp5252</p>
+        </div>
+
+        <div class = "footer-item">
+          <h3>Open Hours</h3>
+          <p>Monday to Friday</p>
+          <p class = "para-text">7 AM - 12 PM</p>
+          <p>Saturday to Sunday</p>
+          <p class = "para-text">9 AM - 11 PM</p>
+        </div>
+
+        <div class = "footer-item">
+          <div class = "footer-icons">
+            <a href = "https://www.facebook.com" target = "_blank">
+              <i class = "fab fa-facebook"></i>
+            </a>
+            <a href = "https://www.instagram.com" target = "_blank">
+              <i class = "fab fa-instagram"></i>
+            </a>
+            <a href = "https://www.twitter.com" target = "_blank">
+              <i class = "fab fa-twitter"></i>
+            </a>
+            <a href = "https://www.linkedin.com" target = "_blank">
+              <i class = "fab fa-linkedin"></i>
+            </a>
+			<a href="https://api.whatsapp.com" target = "_blank">
+          <i class = "fab fa-whatsapp"></i>
+		  </div>
+          <p class = "para-text">Copyright 2021 &copy; shivnericastle</p>
+          <p class = "para-text">All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <!--- end of footer -->
+
+
+    <!-- jQuery -->
+    <script src = "js/jquery-3.5.1.js"></script>
+    <!-- magnific popup -->
+    <script src = "js/jquery.magnific-popup.min.js"></script>
+    <!-- slick js -->
+    <script src = "js/slick.min.js"></script>
+    <!-- custom js -->
+    <script src="js/script.js"></script>
+    <!-- animate on scroll -->
+    <script src = "js/aos.js"></script>
+  </body>
+</html>
+
